@@ -8,7 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 
-//Mantem ate que se finalize a sua conexão com servidor
+//Mantem os dados ate que se finalize a sua conexão com servidor
 @ViewScoped
 @ManagedBean(name="pessoaBean")
 public class PessoaBean implements Serializable {
