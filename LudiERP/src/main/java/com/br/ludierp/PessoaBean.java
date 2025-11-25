@@ -4,17 +4,23 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+//import javax.faces.bean.ViewScoped;
+//import javax.faces.bean.SessionScoped;
 
 
 //Mantem os dados ate que se finalize a sua conexão com servidor
-@ViewScoped
+//@ViewScoped
+
+//Mantem os dados em outras seções do usuário
+//@SessionScoped
+
+//Todos os usuário vao compartilhar esses dados
+@ApplicationScoped
 @ManagedBean(name="pessoaBean")
 public class PessoaBean implements Serializable {
- /**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
  private String nome;
