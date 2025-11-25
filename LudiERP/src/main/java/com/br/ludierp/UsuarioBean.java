@@ -3,11 +3,15 @@ package com.br.ludierp;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 //Classe bean sempre com anotação para se tornar um controlador 
 
 //Javax : ManagedBean 
 @ManagedBean(name="usuarioBean")
+
+//Anotando com Scope padrão : O bean vive apenas durante uma única requisição HTTP. É o escopo padrão.
+@RequestScoped
 public class UsuarioBean {
 	//Receber dados da tela 
 	private String nome;
