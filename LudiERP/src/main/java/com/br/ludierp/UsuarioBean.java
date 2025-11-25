@@ -12,8 +12,25 @@ public class UsuarioBean {
 	//Receber dados da tela 
 	private String nome;
 	private String sobrenome;
+	private String nomeCompleto;
 	private String email;
 	private String login;
+	
+	//Método
+	public void mostrarNome(){
+		nomeCompleto=nome+" "+sobrenome;
+		return;
+	}
+	
+	//Getters e Setters 
+	//Atributos 
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

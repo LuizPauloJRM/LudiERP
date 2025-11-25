@@ -16,11 +16,21 @@
 <!-- 		<h:inputText value="Nome: " size="30" /> -->
 <!-- Chamando o managedBean para controlar meu inputText com dados -->
 <!-- Ao salvar direciona ao SetNome  -->
-<!-- Meus atributo nome vai carregar os dados que vim da tela  -->		
+<!-- Meus atributo nome vai carregar os dados que vim da tela  -->	
+		Nome:
 		<h:inputText id="campoNome" value="#{usuarioBean.nome}"/>
-		<h:outputText value="Teste" />
-
-		<h:commandButton value="Salvar" />
+<!-- 		<h:outputText value="Teste" /> -->
+		
+		<!-- Campo sobrenome  com sáida de texto-->
+		Sobrenome:
+		<h:inputText id="sobrenome" value="#{usuarioBean.sobrenome}"/>
+		
+		<!--Uma saida que vai mostrar na tela chamar uma ação "Action" nome e sobrenome   -->
+		
+		<h:outputText value="#{usuarioBean.nomeCompleto}"/>
+		
+		<!-- Ação  para chamar um método uma ação , no caso vai mostrar nome e sobrenome -->
+		<h:commandButton value="MostrarNome" action="#{usuarioBean.mostrarNome}"/>
 	</h:form>
 </h:body>
 
