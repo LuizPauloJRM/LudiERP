@@ -8,7 +8,7 @@
 	<artifactId>LudiERP</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<!-- IMPORTANTE: Aplicação JSF/ERP sempre é WAR -->
+	<!--  WAR -->
 	<packaging>war</packaging>
 
 	<name>LudiERP</name>
