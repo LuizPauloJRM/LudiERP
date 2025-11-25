@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 
-@RequestScoped
+//Mantem ate que se finalize a sua conexão com servidor
+@ViewScoped
 @ManagedBean(name="pessoaBean")
 public class PessoaBean implements Serializable {
  /**
