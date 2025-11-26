@@ -22,7 +22,8 @@
 <!-- 		<h:outputText value="Teste" /> -->
 	
 		<!-- Ação  para chamar um método uma ação , no caso vai mostrar nome e sobrenome -->
-		<h:commandButton value="Adicionar Nome" action="#{pessoaBean.addNome}"/>
+		<!-- Binding Amarrar meu componente : Para controlar o componente do lado do backend-->
+		<h:commandButton binding="#{pessoaBean.commandButton}" value="Adicionar Nome" action="#{pessoaBean.addNome}"/>
 		
 		
 		<!-- Mostrar nome em uma lista -->

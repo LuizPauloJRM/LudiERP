@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.component.html.HtmlCommandButton;
 //import javax.faces.bean.ViewScoped;
 //import javax.faces.bean.SessionScoped;
 
@@ -14,10 +15,11 @@ import javax.faces.bean.ManagedBean;
 //@ViewScoped
 
 //Mantem os dados em outras seções do usuário
-//@SessionScoped
+
 
 //Todos os usuário vao compartilhar esses dados
-@ApplicationScoped
+//@ApplicationScoped
+@SessionScoped
 @ManagedBean(name="pessoaBean")
 public class PessoaBean implements Serializable {
 
@@ -25,17 +27,29 @@ public class PessoaBean implements Serializable {
 
  private String nome;
  
+ public HtmlCommandButton commandButton;
+ 
  //Lista	
  private List<String> nomes = new ArrayList<String>();
  
  //Método 
  public String addNome() {
 	 nomes.add(nome);
-	 return "";
+	 //Mais de 3 nomes desabilitar botão de comando 
+	 if (nomes.size()> 3 ) {
+		 commandButton.setDisabled(true);
+	 }
+	 return"";
  }
  
  
- //Getters e Setters
+ public void setCommandButton(HtmlCommandButton commandButton) {
+	this.commandButton = commandButton;
+}
+ public HtmlCommandButton getCommandButton() {
+	return commandButton;
+}
+ 
  public String getNome() {
 	return nome;
 }
