@@ -27,6 +27,10 @@ public class PessoaBean implements Serializable {
 
  private String nome;
  
+ private String senha;
+ 
+ private String texto;
+ 
  public HtmlCommandButton commandButton;
  
  //Lista	
@@ -43,6 +47,21 @@ public class PessoaBean implements Serializable {
 	 return ""; //Retorno null ou vazio mesma página
  }
  
+ 
+ public void setSenha(String senha) {
+	this.senha = senha;
+}
+ public String getSenha() {
+	return senha;
+}
+ 
+public void setTexto(String texto) {
+	this.texto = texto;
+}
+
+public String getTexto() {
+	return texto;
+}
  
  public void setCommandButton(HtmlCommandButton commandButton) {
 	this.commandButton = commandButton;
