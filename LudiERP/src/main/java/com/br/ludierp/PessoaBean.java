@@ -38,7 +38,7 @@ public class PessoaBean implements Serializable {
 	 //Mais de 3 nomes desabilitar botão de comando 
 	 if (nomes.size()> 3 ) {
 		 commandButton.setDisabled(true);
-		 return "login";
+		 return "login?faces-redirect=true";
 	 }
 	 return ""; //Retorno null ou vazio mesma página
  }
