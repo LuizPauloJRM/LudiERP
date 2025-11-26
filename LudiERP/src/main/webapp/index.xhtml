@@ -3,35 +3,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html">
 <!-- http://localhost:8080/LudiERP/index.xhtml-->
+<script>
+function alteraValorDoCampo() {
+	var campo =document.getElementById('navegacao:nome');
+	campo.value = 'Troca de valor';
+}
+</script>
 
 <h:head>
 	<title>Home</title>
+	>
 </h:head>
 <h:body>
-	<!-- Baseado em componentes html -> JSF -->
-	<!-- Campo nome -->
-	<h1>Home</h1>
-	<h:form id="formUsuario">
+	<h:form id="navegacao" onclick="this.value='Troca de valor'">
+		<h1>Navegação</h1>
+		<h:inputText id="nome" />
+		<h:commandButton value="Clicar" onclick="alterarValorDoCampo();" />
 
-<!-- 		<h:inputText value="Nome: " size="30" /> -->
-<!-- Chamando o managedBean para controlar meu inputText com dados -->
-<!-- Ao salvar direciona ao SetNome  -->
-<!-- Meus atributo nome vai carregar os dados que vim da tela  -->	
-		Nome:
-		<h:inputText id="campoNome" value="#{usuarioBean.nome}"/>
-<!-- 		<h:outputText value="Teste" /> -->
-		
-		<!-- Campo sobrenome  com sáida de texto-->
-		Sobrenome:
-		<h:inputText id="sobrenome" value="#{usuarioBean.sobrenome}"/>
-		
-		<!--Uma saida que vai mostrar na tela chamar uma ação "Action" nome e sobrenome   -->
-		
-		<h:outputText value="#{usuarioBean.nomeCompleto}"/>
-		
-		<!-- Ação  para chamar um método uma ação , no caso vai mostrar nome e sobrenome -->
-		<h:commandButton value="MostrarNome" action="#{usuarioBean.mostrarNome}"/>
+		<br />
+		<h:commandButton value="Navegar" action="navegacaoImplicita" />
 	</h:form>
+
+
 </h:body>
 
 </html>

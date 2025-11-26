@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<!--http://localhost:8080/LudiERP/navegacaoImplicita-->
+<h:head>
+	<title>Cadastro Pessoas</title>
+</h:head>
+<h:body>
+	<!-- Baseado em componentes html -> JSF -->
+	<!-- Campo nome -->
+	<h1>Navegação</h1>
+	<h:form id="formUsuario">
+
+<!-- 		<h:inputText value="Nome: " size="30" /> -->
+<!-- Chamando o managedBean para controlar meu inputText com dados -->
+<!-- Ao salvar direciona ao SetNome  -->
+<!-- Meus atributo nome vai carregar os dados que vim da tela  -->	
+		Nome:
+		<h:inputText id="campoNome" value="#{pessoaBean.nome}"/>
+<!-- 		<h:outputText value="Teste" /> -->
+	
+		<!-- Ação  para chamar um método uma ação , no caso vai mostrar nome e sobrenome -->
+		<!-- Binding Amarrar meu componente : Para controlar o componente do lado do backend-->
+		<h:commandButton binding="#{pessoaBean.commandButton}" value="Adicionar Nome" action="#{pessoaBean.addNome}"/>
+		
+		
+		<!-- Mostrar nome em uma lista -->
+		<!-- Coluna de uma tabela -->
+		<!-- Variavel para colocar pessoaBean.nome so chama nome no EL -->
+		<h:dataTable value="#{pessoaBean.nomes}" var="n">		
+			<h:column>
+				<h:outputText value="#{n}"/>
+			</h:column>	
+		</h:dataTable>
+	
+	</h:form>
+</h:body>	
+
+
+
+</html>	
