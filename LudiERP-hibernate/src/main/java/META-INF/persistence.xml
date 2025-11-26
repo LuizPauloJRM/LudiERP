@@ -14,12 +14,12 @@
 			
 			<!-- URL  do banco  banco novo com esse nome LudiERPhibernate-->
 			<!-- Preciso criar esse banco no postgres pgAdmin -->
-			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/LudiERPhibernate"/>
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5435/LudiERPhibernate"/>
 			<!-- Dialeto linguagem -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>			
 			<!-- Usuario do banco e senha -->			
 			<property name="hibernate.connection.username" value="postgres"/>
-			<property name="hibernate.connection.password" value=""/>
+			<property name="hibernate.connection.password" value="admin"/>
 			<!-- Atualizar tabela quando criar uma entidade, criar tabela automaticamente  -->
 			<property name="hibernate.hbm2dll.auto" value="update"/>		
 		</properties>
