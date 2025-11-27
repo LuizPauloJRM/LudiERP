@@ -26,4 +26,10 @@ import javax.persistence.Persistence;
 		public static EntityManager getEntityManager(){
 			return factory.createEntityManager();//Parte de persistencia 
 		}
+		
+		//Consulta
+		public static Object getPrimaryKey (Object entity) {
+			return factory.getPersistenceUnitUtil().getIdentifier(entity);
+			
+		}
 }

@@ -24,7 +24,15 @@ public class DaoGeneric<E>{
 		transaction.begin();
 		entityManager.persist(entidade);
 		transaction.commit();
+
 		
+	}
+	//Consultar no banco "find"
+	public E pesquisar(E entidade) {
+		Object id = HibernateUtil.getPrimaryKey(entidade);
+		E e = (E)entityManager.find(entidade.getClass(),id);
+		return e;
+	
 	}
 
 }

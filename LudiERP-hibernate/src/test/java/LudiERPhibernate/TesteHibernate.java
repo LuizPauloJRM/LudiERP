@@ -21,5 +21,21 @@ public class TesteHibernate {
 		usuariopessoa.setEmail("luiz@email.com");	
 	
 		daoGeneric.salvar(usuariopessoa);
+		
+		
 	}
+	
+	//Metodo consulta 
+	@Test
+	public void testeBuscar() {
+		//instanciando o daoGeneric e pessoa 
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+		Usuario usuariopessoa = new Usuario();
+		usuariopessoa.setId(2L);
+		
+		usuariopessoa = daoGeneric.pesquisar(usuariopessoa);
+		
+		System.out.println(usuariopessoa);
+	}
+	
 }
