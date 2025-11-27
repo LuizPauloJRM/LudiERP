@@ -1,5 +1,7 @@
 package LudiERPhibernate;
 
+import java.util.List;
+
 import org.junit.Test;
 
 import LudiERPhibernate.dao.DaoGeneric;
@@ -15,7 +17,7 @@ public class TesteHibernate {
 		Usuario usuariopessoa = new Usuario();
 		usuariopessoa.setIdade(26);
 		usuariopessoa.setLogin("teste");
-		usuariopessoa.setNome("Luiz");
+		usuariopessoa.setNome("Roberto");
 		usuariopessoa.setSenha("123");
 		usuariopessoa.setSobrenome("Medeiros");
 		usuariopessoa.setEmail("luiz@email.com");	
@@ -66,6 +68,19 @@ public class TesteHibernate {
 		usuariopessoa = daoGeneric.deletarPorId(usuariopessoa);
 		
 		System.out.println(usuariopessoa);
+	}
+	
+	@Test
+	public void testeConsultar() {
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+		
+		List<Usuario> list = daoGeneric.listar(Usuario.class);
+	
+		for (Usuario usuariopessoa:list) {
+			System.out.println(usuariopessoa);
+			
+		}
+	
 	}
 	
 }
