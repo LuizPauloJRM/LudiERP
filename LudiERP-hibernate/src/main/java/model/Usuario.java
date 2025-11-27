@@ -1,10 +1,13 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 //Anotação para entidades sabe que vai gerar uma tabela no banco 
@@ -21,6 +24,18 @@ public class Usuario {
 	private String login;
 	private String senha;
 	private int idade;
+	
+	//Setter e getters 
+	public List<TelefoneUser> getTelefoneUsers() {
+		return telefoneUsers;
+	}
+	public void setTelefoneUsers(List<TelefoneUser> telefoneUsers) {
+		this.telefoneUsers = telefoneUsers;
+	}
+	//Lista para telefones onetomany 
+	//um para muitos , mapeados para atributo pai
+	@OneToMany(mappedBy ="usuario")
+	private List<TelefoneUser> telefoneUsers;
 	
 	
 	public int getIdade() {

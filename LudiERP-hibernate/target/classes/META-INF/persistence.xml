@@ -8,6 +8,7 @@
 	<!-- Configuração com o banco, driver , declarar as classes -->
 	<persistence-unit name="LudiERP-hibernate">
 		<class>model.Usuario</class>
+		<class>model.TelefoneUser</class> 
 		
 		<!-- Declarar propriedades -->
 		<properties>
