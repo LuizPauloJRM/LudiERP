@@ -96,4 +96,17 @@ public class TesteHibernate {
 		}
 	}
 	
+	//Ordenação  , resultados máximos definidos 
+	// 4 pessoas ordenadas por nome	com order by nome e set max result
+	@Test
+	public void testeQueryListMaxResult() {
+		//Sempre iniciar o daoGeneric
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+//		List<Usuario> list = daoGeneric.getEntityManager().createQuery(" from Usuario").getResultList();
+		List<Usuario> list = daoGeneric.getEntityManager().createQuery(" from Usuario order by nome").setMaxResults(6).getResultList();//Busca ordenada por nome 
+	
+		for (Usuario usuariopessoa : list) {
+			System.out.println(usuariopessoa);
+		}
+	}
 }
