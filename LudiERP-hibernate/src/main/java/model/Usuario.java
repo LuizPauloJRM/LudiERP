@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 //Anotação para entidades sabe que vai gerar uma tabela no banco 
-@Table
+@Table(name = "usuario")
 @Entity
 public class Usuario {
 	@Id
