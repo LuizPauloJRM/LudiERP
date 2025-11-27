@@ -7,6 +7,8 @@
 
 	<!-- Configuração com o banco, driver , declarar as classes -->
 	<persistence-unit name="LudiERP-hibernate">
+		<class>model.Usuario</class>
+		
 		<!-- Declarar propriedades -->
 		<properties>
 			<!-- Dados de conexão com banco -->
@@ -14,14 +16,18 @@
 			
 			<!-- URL  do banco  banco novo com esse nome LudiERPhibernate-->
 			<!-- Preciso criar esse banco no postgres pgAdmin -->
-			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5435/LudiERPhibernate"/>
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5433/LudiERPhibernate"/>
 			<!-- Dialeto linguagem -->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>			
 			<!-- Usuario do banco e senha -->			
 			<property name="hibernate.connection.username" value="postgres"/>
 			<property name="hibernate.connection.password" value="admin"/>
+			
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="javax.persistence.validation.mode" value="none" />
+			<property name="hibernate.format_sql" value="true"/>
 			<!-- Atualizar tabela quando criar uma entidade, criar tabela automaticamente  -->
-			<property name="hibernate.hbm2dll.auto" value="update"/>		
+			<property name="hibernate.hbm2ddl.auto" value="update"/>		
 		</properties>
 
 	</persistence-unit>

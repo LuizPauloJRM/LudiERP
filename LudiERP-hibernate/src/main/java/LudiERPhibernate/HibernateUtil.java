@@ -24,6 +24,6 @@ import javax.persistence.Persistence;
 		}
 		//Retornar aplicação 
 		public static EntityManager getEntityManager(){
-			return factory.createEntityManager();//Prove parte de persistencia 
+			return factory.createEntityManager();//Parte de persistencia 
 		}
 }
