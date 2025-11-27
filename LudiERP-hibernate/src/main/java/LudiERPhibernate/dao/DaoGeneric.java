@@ -78,5 +78,11 @@ public class DaoGeneric<E> {
 	}
 	
 	
+	//Acesso global do entityManager
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+	
+	
 
 }

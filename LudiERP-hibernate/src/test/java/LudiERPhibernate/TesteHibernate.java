@@ -83,4 +83,17 @@ public class TesteHibernate {
 	
 	}
 	
+	//Carregar todos objetos pessoas 
+	@Test
+	public void testeQueryList() {
+		//Sempre iniciar o daoGeneric
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+//		List<Usuario> list = daoGeneric.getEntityManager().createQuery(" from Usuario").getResultList();
+		List<Usuario> list = daoGeneric.getEntityManager().createQuery(" from Usuario where nome =  'Roberto'").getResultList();//Buscar onde nome seja especifico
+	
+		for (Usuario usuariopessoa : list) {
+			System.out.println(usuariopessoa);
+		}
+	}
+	
 }
