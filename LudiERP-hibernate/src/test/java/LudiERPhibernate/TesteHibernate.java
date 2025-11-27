@@ -109,4 +109,23 @@ public class TesteHibernate {
 			System.out.println(usuariopessoa);
 		}
 	}
+	
+	//Método de lista de usuario setar um parametro condicionais  
+	@Test
+	public void testeQueryListParameter() {
+		//Dao 
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+		
+		List<Usuario> list = daoGeneric.getEntityManager().createQuery("from Usuario where nome = :nome or sobrenome = :sobrenome")
+				.setParameter("nome", "Bruna").getResultList();
+//				.setParameter("sobrenome","Paulo")
+				
+		for (Usuario usuario : list) {
+			System.out.println(usuario);
+		}
+
+		
+		
+	}
+	
 }
