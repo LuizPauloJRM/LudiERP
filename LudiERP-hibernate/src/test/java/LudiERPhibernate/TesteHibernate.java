@@ -54,5 +54,18 @@ public class TesteHibernate {
 		System.out.println(usuariopessoa);
 	}
 	
+	//instanciando o daoGeneric e pessoa 
+	//Teste delete , precisamos consultar antes de deletar 
+	@Test
+	public void deletarPorId() {
+		
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+		Usuario usuariopessoa = new Usuario();
+		usuariopessoa.setId(2L);
+		
+		usuariopessoa = daoGeneric.deletarPorId(usuariopessoa);
+		
+		System.out.println(usuariopessoa);
+	}
 	
 }
