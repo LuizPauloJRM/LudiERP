@@ -22,11 +22,22 @@ public class DaoGeneric<E>{
 		 */
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		entityManager.persist(entidade);
+		entityManager.persist(entidade);//salvar
 		transaction.commit();
 
 		
 	}
+	
+	//Atualizar  ou salva uso do merge com retorno de um objeto entityManager.merge(entidade);
+	public E updateMerge(E entidade) {
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		E entidadeSalva = entityManager.merge(entidade);
+		transaction.commit();
+		//Salva e retorna , da o merge, commit la no banco e retorna salva la no banco de dados  
+		return entidadeSalva;
+	}
+	
 	//Consultar no banco "find"
 	public E pesquisar(E entidade) {
 		Object id = HibernateUtil.getPrimaryKey(entidade);
