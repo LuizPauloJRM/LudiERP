@@ -12,11 +12,11 @@
 		<!-- Propriedade configurações do banco -->
 		<!-- Url no banco -->
 		<properties>
-			<property name="javax.persistence.jbdc.url" value="jdbc:postgresql://localhost:5433/LudiERP"/>
+			<property name="javax.persistence.jbdc.url" value="jdbc:mysql://localhost:3306/LudiERP"/>
 			<property name="javax.persistence.jbdc.user" value="admin"/>
 			<property name="javax.persistence.jbdc.password" value="admin"/>
-			<property name="javax.persistence.jbdc.driver" value="org.postgresql.Driver"/>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+			<property name="javax.persistence.jbdc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true"/>
 			<property name="hibernate.hbm2ddl.auto" value="update"/>			

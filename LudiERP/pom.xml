@@ -65,12 +65,11 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- POSTGRESQL DRIVER -->
+		<!-- MYSQL DRIVER -->
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>42.2.12</version>
-			<scope>compile</scope>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.11</version>
 		</dependency>
 
 		<!-- CDI -->
