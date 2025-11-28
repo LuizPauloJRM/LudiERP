@@ -33,12 +33,14 @@
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>2.2.14</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>2.2.14</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- PRIMEFACES - versão compatível com JSF 2.2 -->
@@ -53,12 +55,14 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.11.Final</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.3.11.Final</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- POSTGRESQL DRIVER -->
@@ -66,6 +70,7 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.2.12</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- CDI -->
