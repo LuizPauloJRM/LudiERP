@@ -1,14 +1,10 @@
 package com.br.ludierp;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.component.html.HtmlCommandButton;
-//import javax.faces.bean.ViewScoped;
-//import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
+
+import com.br.ludierp.dao.DaoGeneric;
+import com.br.ludierp.entidades.Pessoa;
 
 
 //Mantem os dados ate que se finalize a sua conexão com servidor
@@ -19,70 +15,30 @@ import javax.faces.component.html.HtmlCommandButton;
 
 //Todos os usuário vao compartilhar esses dados
 //@ApplicationScoped
-@SessionScoped
+@ViewScoped
 @ManagedBean(name="pessoaBean")
-public class PessoaBean implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-
- private String nome;
- 
- private String senha;
- 
- private String texto;
- 
- public HtmlCommandButton commandButton;
- 
- //Lista	
- private List<String> nomes = new ArrayList<String>();
- 
- //Método 
- public String addNome() {
-	 nomes.add(nome);
-	 //Mais de 3 nomes desabilitar botão de comando 
-	 if (nomes.size()> 3 ) {
-		 commandButton.setDisabled(true);
-		 return "login?faces-redirect=true";
-	 }
-	 return ""; //Retorno null ou vazio mesma página
- }
- 
- 
- public void setSenha(String senha) {
-	this.senha = senha;
-}
- public String getSenha() {
-	return senha;
-}
- 
-public void setTexto(String texto) {
-	this.texto = texto;
-}
-
-public String getTexto() {
-	return texto;
-}
- 
- public void setCommandButton(HtmlCommandButton commandButton) {
-	this.commandButton = commandButton;
-}
- public HtmlCommandButton getCommandButton() {
-	return commandButton;
-}
- 
- public String getNome() {
-	return nome;
-}
- public void setNome(String nome) {
-	this.nome = nome;
-}
- 
- public List<String> getNomes() {
-	return nomes;
-}
- 
- public void setNomes(List<String> nomes) {
-	this.nomes = nomes;
-}
- 
+public class PessoaBean {
+	
+	private Pessoa pessoa = new Pessoa();
+	private DaoGeneric<Pessoa> daoGeneric = new DaoGeneric<Pessoa>();
+	
+	//Método salvar 
+	public String salvar() {
+		daoGeneric.salvar(pessoa);
+		return "";
+	}
+	
+	//Getters  e Setters 
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+	public DaoGeneric<Pessoa> getDaoGeneric() {
+		return daoGeneric;
+	}
+	public void setDaoGeneric(DaoGeneric<Pessoa> daoGeneric) {
+		this.daoGeneric = daoGeneric;
+	}
 }
