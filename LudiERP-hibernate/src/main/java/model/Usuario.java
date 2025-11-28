@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,9 +25,11 @@ public class Usuario {
 	private int idade;
 	
 	//Setter e getters 
+	@OneToMany(mappedBy = "usuario")
 	public List<TelefoneUser> getTelefoneUsers() {
 		return telefoneUsers;
 	}
+	
 	public void setTelefoneUsers(List<TelefoneUser> telefoneUsers) {
 		this.telefoneUsers = telefoneUsers;
 	}
